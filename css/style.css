@@ -94,8 +94,12 @@ nav a:hover {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     width: 85%;
     margin: 25px auto;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -108,9 +112,9 @@ h1 {
 .team-section {
     display: flex;
     flex-direction: row;   
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 25px;
-    flex-wrap: wrap;       
 }
 
 .team-member {
@@ -137,6 +141,9 @@ h1 {
 }
 
 form {
+    
+    justify-content: center;
+    align-items: center;
     width: 90%;
     max-width: 380px;
     background: var(--md-sys-color-surface);
@@ -145,6 +152,7 @@ form {
     margin: 15px auto 0 auto;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
     border: 1px solid var(--md-sys-color-outline);
+
 }
 
 label {
@@ -169,21 +177,44 @@ input:focus, textarea:focus {
     outline: none;
 }
 
-button {
-    width: 100%;
-    background: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: background-color 0.2s;
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 8px;
+  transition: 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
-button:hover {
-    background: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
+.btn-primary {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.btn-small {
+  height: 32px;
+  padding: 0 12px;
+  font-size: var(--md-sys-typescale-label-small-size);
+  line-height: var(--md-sys-typescale-label-small-line-height);
+  font-weight: var(--md-sys-typescale-label-small-weight);
+  letter-spacing: var(--md-sys-typescale-label-small-tracking);
+}
+
+.btn-primary:hover {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.btn:disabled,
+.btn.disabled {
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 0.6;
+  cursor: default;
 }
 
 footer {
