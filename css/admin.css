@@ -1,0 +1,68 @@
+/* Admin panel layout */
+.admin-wrap{
+  width:min(1200px, 94vw);
+  margin:1.25rem auto 2.25rem;
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:1rem;
+}
+.admin-aside{
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  background:#fff;
+  padding:1rem;
+  position:sticky;
+  top:90px;
+  height:fit-content;
+}
+.admin-aside h2{margin:.2rem 0 .8rem}
+.admin-menu{list-style:none; padding:0; margin:0; display:grid; gap:.35rem}
+.admin-menu a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.55rem .7rem;
+  border-radius:12px;
+  border:1px solid transparent;
+  color:var(--text);
+}
+.admin-menu a.active{
+  background:var(--muted);
+  border-color:var(--border);
+}
+.admin-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  margin-bottom:1rem;
+}
+.kpis{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:1rem;
+}
+.kpi{
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  background:#fff;
+  padding:1rem;
+}
+.kpi .num{font-size:1.4rem; font-weight:800}
+.inline-form{
+  display:grid;
+  gap:.6rem;
+  width:min(520px, 100%);
+}
+.admin-actions{
+  display:flex;
+  gap:.6rem;
+  flex-wrap:wrap;
+}
+@media (max-width: 980px){
+  .admin-wrap{grid-template-columns:1fr}
+  .admin-aside{position:relative; top:auto}
+  .kpis{grid-template-columns:1fr}
+}

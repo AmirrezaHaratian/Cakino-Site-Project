@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مدیریت محصولات | کیکینو</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="logo">
+    <a href="index.html" title="کیکینو"><img src="assests/Logo-Cakino.png" alt="Cakino Logo"></a>
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html" class="active">خانه</a></li>
+      <li><a href="products.html" class="">سفارش کیک</a></li>
+      <li><a href="about.html" class="">درباره ما</a></li>
+      <li><a href="contact.html" class="">تماس با ما</a></li>
+      <li><a href="login.html" class="">حساب کاربری</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-actions">
+    <a href="cart.html" class="icon" title="سبد خرید">🛒</a>
+    <a href="login.html" class="icon" title="ورود">👤</a>
+  </div>
+</header>
+
+
+<main class="admin-wrap">
+  
+<aside class="admin-aside">
+  <h2>پنل مدیریت</h2>
+  <ul class="admin-menu">
+    <li><a href="admin-dashboard.html" class="">داشبورد<span>›</span></a></li>
+    <li><a href="admin-orders.html" class="">سفارش‌ها<span>›</span></a></li>
+    <li><a href="admin-products.html" class="active">محصولات<span>›</span></a></li>
+    <li><a href="admin-customers.html" class="">مشتریان<span>›</span></a></li>
+    <li><a href="admin-settings.html" class="">تنظیمات<span>›</span></a></li>
+  </ul>
+
+  <div style="margin-top:1rem">
+    <button id="adminLogout" class="btn btn-outline" type="button">خروج</button>
+    <p style="margin:.6rem 0 0"><small>دمو است؛ داده‌ها در مرورگر ذخیره می‌شود.</small></p>
+  </div>
+</aside>
+
+  <section>
+    
+<div class="admin-top">
+  <div>
+    <h1 style="margin:.2rem 0">محصولات</h1>
+    <p class="lead" style="margin:.2rem 0 0">افزودن/ویرایش/حذف محصولات (دمو).</p>
+  </div>
+</div>
+
+<div class="grid-2" style="align-items:start">
+  <form id="productForm" class="inline-form card">
+    <h2 id="formMode" style="margin:.2rem 0 0.8rem">افزودن محصول</h2>
+
+    <label>شناسه (id)</label>
+    <input name="pid" placeholder="مثلاً: pistachio" required>
+
+    <label>نام محصول</label>
+    <input name="pname" placeholder="مثلاً: کیک پسته‌ای" required>
+
+    <label>قیمت هر کیلو (تومان)</label>
+    <input name="pprice" type="number" placeholder="مثلاً: 650000" required>
+
+    <label>دسته‌بندی</label>
+    <input name="pcat" placeholder="مثلاً: خاص">
+
+    <label>آدرس تصویر (اختیاری)</label>
+    <input name="pimg" placeholder="assests/images/...">
+
+    <div class="actions-row">
+      <button class="btn btn-primary" type="submit">ذخیره</button>
+      <button class="btn btn-outline" type="button" onclick="document.getElementById('productForm').reset(); document.getElementById('productForm').pid.disabled=false; document.getElementById('formMode').textContent='افزودن محصول';">پاک کردن</button>
+    </div>
+  </form>
+
+  <div class="card">
+    <h2 style="margin:.2rem 0 1rem">لیست محصولات</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>نام</th>
+          <th>قیمت/کیلو</th>
+          <th>دسته</th>
+          <th>عملیات</th>
+        </tr>
+      </thead>
+      <tbody id="productsBody"></tbody>
+    </table>
+  </div>
+</div>
+
+  </section>
+</main>
+
+
+<footer class="main-footer">
+  <div class="footer-section">
+    <h3>کیکینو</h3>
+    <p>سفارش آنلاین کیک‌های دست‌ساز و مناسبتی با امکان شخصی‌سازی و ارسال.</p>
+  </div>
+
+  <div class="footer-section">
+    <h4>لینک‌های مفید</h4>
+    <ul>
+      <li><a href="products.html">سفارش کیک</a></li>
+      <li><a href="delivery-info.html">راهنمای ارسال</a></li>
+      <li><a href="admin-login.html">پنل مدیریت</a></li>
+      <li><a href="contact.html">تماس با ما</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-section">
+    <h4>ارتباط با ما</h4>
+    <p>📍 اصفهان</p>
+    <p>📞 0912-000-0000</p>
+    <p>📸 Instagram: @Cakino</p>
+  </div>
+</footer>
+
+<div class="copyright">
+  © 2025 کیکینو — تمامی حقوق محفوظ است
+</div>
+
+<script src="js/data.js"></script><script src="js/store.js"></script><script src="js/admin.js"></script>
+</body>
+</html>
