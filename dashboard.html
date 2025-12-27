@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>فراموشی رمز عبور | کیکینو</title>
+  <title>داشبورد | کیکینو</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
@@ -34,17 +34,48 @@
 
 
 <main>
-  <h1>فراموشی رمز عبور</h1>
-  <p class="lead">ایمیل یا شماره موبایل را وارد کنید تا کد بازیابی نمایش داده شود.</p>
+  <h1>داشبورد کاربری</h1>
+  <p class="lead">آخرین سفارش‌های شما (بر اساس داده‌های مرورگر شما).</p>
 
-  <form class="form card" onsubmit="event.preventDefault(); alert('کد بازیابی (دمو): 12345'); location.href='otp.html';">
-    <label>ایمیل یا شماره موبایل</label>
-    <input type="text" required>
-    <button class="btn btn-primary" type="submit">ارسال کد</button>
-  </form>
-
-  <p><a href="login.html">بازگشت به ورود</a></p>
+  <div class="card">
+    <div class="actions-row" style="justify-content:space-between">
+      <strong>لیست سفارش‌ها</strong>
+      <button class="btn btn-small btn-outline" onclick="localStorage.removeItem('cakinoUser'); location.href='index.html';">خروج</button>
+    </div>
+    <table class="table" style="margin-top:1rem">
+      <thead>
+        <tr>
+          <th>کد سفارش</th>
+          <th>محصول</th>
+          <th>مبلغ</th>
+          <th>وضعیت</th>
+        </tr>
+      </thead>
+      <tbody id="userOrders"></tbody>
+    </table>
+    <p style="margin:.8rem 0 0"><small>این صفحه دمو است و احراز هویت واقعی ندارد.</small></p>
+  </div>
 </main>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if(!localStorage.getItem('cakinoUser')){
+      location.href='login.html';
+      return;
+    }
+    const orders = (JSON.parse(localStorage.getItem('cakinoOrders')||'[]')||[]);
+    const tbody = document.getElementById('userOrders');
+    const rows = orders.slice(0,8).map(o => {
+      const statusMap = {pending:'در انتظار', preparing:'آماده‌سازی', delivered:'تحویل', cancelled:'لغو'};
+      return `<tr>
+        <td>${o.id}</td>
+        <td>${o.item?.productId || '—'}</td>
+        <td>${(Number(o.pricing?.total||0)).toLocaleString('fa-IR')} تومان</td>
+        <td>${statusMap[o.status] || o.status}</td>
+      </tr>`;
+    }).join('');
+    tbody.innerHTML = rows || '<tr><td colspan="4">سفارشی پیدا نشد.</td></tr>';
+  });
+</script>
 
 
 <footer class="main-footer">

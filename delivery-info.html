@@ -2,80 +2,96 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مشخصات ارسال | کیکینو</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
-  <title>مشخصات ارسال | کیکینو</title>
+  
 </head>
 <body>
 
-  <header class="main-header">
+<header class="main-header">
   <div class="logo">
-    <img src="assests/Logo-Cakino.png" alt="Cakino Logo">
+    <a href="index.html" title="کیکینو"><img src="assests/Logo-Cakino.png" alt="Cakino Logo"></a>
   </div>
 
   <nav class="main-nav">
     <ul>
-      <li><a href="customize.html" class="active">بازگشت</a></li>
+      <li><a href="index.html" class="">خانه</a></li>
+      <li><a href="products.html" class="active">سفارش کیک</a></li>
+      <li><a href="about.html" class="">درباره ما</a></li>
+      <li><a href="contact.html" class="">تماس با ما</a></li>
+      <li><a href="login.html" class="">حساب کاربری</a></li>
     </ul>
   </nav>
 
   <div class="header-actions">
-    <a href="#" class="icon">🛒</a>
-    <a href="login.html" class="icon">👤</a>
+    <a href="cart.html" class="icon" title="سبد خرید">🛒</a>
+    <a href="login.html" class="icon" title="ورود">👤</a>
   </div>
 </header>
+
 
 <main>
   <h1>مشخصات ارسال</h1>
 
-  <form action="review-order.html">
+  <form id="deliveryForm" class="form card">
+    <label for="fullname">نام گیرنده</label>
+    <input id="fullname" name="fullname" type="text" required>
 
-    <label>آدرس تحویل</label>
-    <textarea></textarea>
+    <label for="phone">شماره تماس</label>
+    <input id="phone" name="phone" type="tel" placeholder="09xxxxxxxxx" required>
 
-    <label>تاریخ تحویل</label>
-    <input type="date">
+    <label for="address">آدرس تحویل</label>
+    <textarea id="address" name="address" rows="4" required></textarea>
 
-    <label>زمان تحویل</label>
-    <select>
-      <option>9 تا 12</option>
-      <option>12 تا 15</option>
-      <option>18 تا 21</option>
+    <label for="date">تاریخ تحویل</label>
+    <input id="date" name="date" type="date">
+
+    <label for="time">بازه زمانی تحویل</label>
+    <select id="time" name="time">
+      <option value="9 تا 12">9 تا 12</option>
+      <option value="12 تا 15" selected>12 تا 15</option>
+      <option value="18 تا 21">18 تا 21</option>
     </select>
 
-    <button class="btn btn-primary btn-small">نمایش پیش فاکتور</button>
-
+    <div class="actions-row">
+      <a class="btn btn-outline" href="customize.html">بازگشت</a>
+      <button class="btn btn-primary" type="submit">نمایش پیش‌فاکتور</button>
+    </div>
   </form>
 </main>
-<footer class="main-footer">
 
+
+<footer class="main-footer">
   <div class="footer-section">
     <h3>کیکینو</h3>
-    <p>سفارش آنلاین کیک‌های دست‌ساز و مناسبتی</p>
+    <p>سفارش آنلاین کیک‌های دست‌ساز و مناسبتی با امکان شخصی‌سازی و ارسال.</p>
   </div>
 
   <div class="footer-section">
     <h4>لینک‌های مفید</h4>
     <ul>
       <li><a href="products.html">سفارش کیک</a></li>
-      <li><a href="#">قوانین</a></li>
-      <li><a href="#">سوالات متداول</a></li>
+      <li><a href="delivery-info.html">راهنمای ارسال</a></li>
+      <li><a href="admin-login.html">پنل مدیریت</a></li>
       <li><a href="contact.html">تماس با ما</a></li>
     </ul>
   </div>
 
   <div class="footer-section">
     <h4>ارتباط با ما</h4>
-    <p>📍 اصفهان ...</p>
-    <p>📞 0912...</p>
+    <p>📍 اصفهان</p>
+    <p>📞 0912-000-0000</p>
     <p>📸 Instagram: @Cakino</p>
   </div>
-
 </footer>
 
 <div class="copyright">
   © 2025 کیکینو — تمامی حقوق محفوظ است
 </div>
+
+<script src="js/data.js"></script><script src="js/store.js"></script><script src="js/shop.js"></script>
 </body>
 </html>

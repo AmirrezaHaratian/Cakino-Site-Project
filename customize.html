@@ -2,83 +2,104 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>شخصی‌سازی سفارش | کیکینو</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
-  <title>شخصی‌سازی سفارش | کیکینو</title>
+  
 </head>
 <body>
 
-  <header class="main-header">
+<header class="main-header">
   <div class="logo">
-    <img src="assests/Logo-Cakino.png" alt="Cakino Logo">
+    <a href="index.html" title="کیکینو"><img src="assests/Logo-Cakino.png" alt="Cakino Logo"></a>
   </div>
 
   <nav class="main-nav">
     <ul>
-      <li><a href="products.html" class="active">بازگشت</a></li>
+      <li><a href="index.html" class="">خانه</a></li>
+      <li><a href="products.html" class="active">سفارش کیک</a></li>
+      <li><a href="about.html" class="">درباره ما</a></li>
+      <li><a href="contact.html" class="">تماس با ما</a></li>
+      <li><a href="login.html" class="">حساب کاربری</a></li>
     </ul>
   </nav>
 
   <div class="header-actions">
-    <a href="#" class="icon">🛒</a>
-    <a href="login.html" class="icon">👤</a>
+    <a href="cart.html" class="icon" title="سبد خرید">🛒</a>
+    <a href="login.html" class="icon" title="ورود">👤</a>
   </div>
 </header>
+
 
 <main>
   <h1>شخصی‌سازی سفارش</h1>
 
-  <form action="delivery-info.html">
+  <div class="grid-2">
+    <div class="card">
+      <h2 id="productName">کیک</h2>
+      <img id="productImg" src="assests/images/cocoa-cake.jpg" alt="تصویر کیک" style="width:100%;height:260px;object-fit:cover;border-radius:12px;border:1px solid var(--border);background:var(--muted)">
+      <p style="margin:.6rem 0 0"><small>پس از تکمیل این مرحله، اطلاعات ارسال را وارد می‌کنید.</small></p>
+    </div>
 
-    <label>وزن کیک</label>
-    <select>
-      <option>1 کیلو</option>
-      <option>2 کیلو</option>
-      <option>3 کیلو</option>
-    </select>
+    <form id="customizeForm" class="form card">
+      <label for="weightKg">وزن کیک</label>
+      <select id="weightKg" name="weightKg" required>
+        <option value="1">1 کیلو</option>
+        <option value="2">2 کیلو</option>
+        <option value="3">3 کیلو</option>
+        <option value="4">4 کیلو</option>
+      </select>
 
-    <label>طعم</label>
-    <select>
-      <option>شکلاتی</option>
-      <option>وانیلی</option>
-      <option>گردویی</option>
-    </select>
+      <label for="flavor">طعم</label>
+      <select id="flavor" name="flavor" required>
+        <option value="شکلاتی">شکلاتی</option>
+        <option value="وانیلی">وانیلی</option>
+        <option value="گردویی">گردویی</option>
+        <option value="توت‌فرنگی">توت‌فرنگی</option>
+      </select>
 
-    <label>متن روی کیک</label>
-    <input type="text">
+      <label for="message">متن روی کیک (اختیاری)</label>
+      <input id="message" name="message" type="text" placeholder="مثلاً: تولدت مبارک">
 
-    <button class="btn btn-primary btn-small" type="submit">مرحله بعد</button>
-  </form>
+      <div class="actions-row">
+        <a class="btn btn-outline" href="products.html">بازگشت</a>
+        <button class="btn btn-primary" type="submit">مرحله بعد</button>
+      </div>
+    </form>
+  </div>
 </main>
-<footer class="main-footer">
 
+
+<footer class="main-footer">
   <div class="footer-section">
     <h3>کیکینو</h3>
-    <p>سفارش آنلاین کیک‌های دست‌ساز و مناسبتی</p>
+    <p>سفارش آنلاین کیک‌های دست‌ساز و مناسبتی با امکان شخصی‌سازی و ارسال.</p>
   </div>
 
   <div class="footer-section">
     <h4>لینک‌های مفید</h4>
     <ul>
       <li><a href="products.html">سفارش کیک</a></li>
-      <li><a href="#">قوانین</a></li>
-      <li><a href="#">سوالات متداول</a></li>
+      <li><a href="delivery-info.html">راهنمای ارسال</a></li>
+      <li><a href="admin-login.html">پنل مدیریت</a></li>
       <li><a href="contact.html">تماس با ما</a></li>
     </ul>
   </div>
 
   <div class="footer-section">
     <h4>ارتباط با ما</h4>
-    <p>📍 اصفهان ...</p>
-    <p>📞 0912...</p>
+    <p>📍 اصفهان</p>
+    <p>📞 0912-000-0000</p>
     <p>📸 Instagram: @Cakino</p>
   </div>
-
 </footer>
 
 <div class="copyright">
   © 2025 کیکینو — تمامی حقوق محفوظ است
 </div>
+
+<script src="js/data.js"></script><script src="js/store.js"></script><script src="js/shop.js"></script>
 </body>
 </html>

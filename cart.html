@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>تماس با ما | کیکینو</title>
+  <title>سبد خرید | کیکینو</title>
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
@@ -19,9 +19,9 @@
   <nav class="main-nav">
     <ul>
       <li><a href="index.html" class="">خانه</a></li>
-      <li><a href="products.html" class="">سفارش کیک</a></li>
+      <li><a href="products.html" class="active">سفارش کیک</a></li>
       <li><a href="about.html" class="">درباره ما</a></li>
-      <li><a href="contact.html" class="active">تماس با ما</a></li>
+      <li><a href="contact.html" class="">تماس با ما</a></li>
       <li><a href="login.html" class="">حساب کاربری</a></li>
     </ul>
   </nav>
@@ -34,21 +34,7 @@
 
 
 <main>
-  <h1>تماس با ما</h1>
-  <p class="lead">پیشنهاد، انتقاد یا سفارش سازمانی دارید؟ پیام بدهید.</p>
-
-  <form class="form card" onsubmit="event.preventDefault(); alert('پیام شما ثبت شد (دمو).');">
-    <label>نام و نام‌خانوادگی</label>
-    <input type="text" required>
-
-    <label>شماره تماس</label>
-    <input type="tel" required>
-
-    <label>پیام شما</label>
-    <textarea rows="5" required></textarea>
-
-    <button class="btn btn-primary" type="submit">ارسال پیام</button>
-  </form>
+  <div id="cartBox"></div>
 </main>
 
 
@@ -80,6 +66,6 @@
   © 2025 کیکینو — تمامی حقوق محفوظ است
 </div>
 
-<script src="js/data.js"></script><script src="js/store.js"></script>
+<script src="js/data.js"></script><script src="js/store.js"></script><script src="js/shop.js"></script>
 </body>
 </html>

@@ -2,70 +2,92 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>کیکینو | سفارش آنلاین کیک</title>
-
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
+  
 </head>
 <body>
 
 <header class="main-header">
   <div class="logo">
-    <img src="assests/Logo-Cakino.png" alt="Cakino Logo">
+    <a href="index.html" title="کیکینو"><img src="assests/Logo-Cakino.png" alt="Cakino Logo"></a>
   </div>
 
   <nav class="main-nav">
     <ul>
-      <li><a href="index.html"class="active">خانه</a></li>
-      <li><a href="products.html">سفارش کیک</a></li>
-      <li><a href="about.html">درباره ما</a></li>
-      <li><a href="contact.html">تماس با ما</a></li>
-      <li><a href="signup.html">ثبت نام/ورود</a></li>
+      <li><a href="index.html" class="active">خانه</a></li>
+      <li><a href="products.html" class="">سفارش کیک</a></li>
+      <li><a href="about.html" class="">درباره ما</a></li>
+      <li><a href="contact.html" class="">تماس با ما</a></li>
+      <li><a href="login.html" class="">حساب کاربری</a></li>
     </ul>
   </nav>
 
   <div class="header-actions">
-    <a href="#" class="icon">🛒</a>
-    <a href="login.html" class="icon">👤</a>
+    <a href="cart.html" class="icon" title="سبد خرید">🛒</a>
+    <a href="login.html" class="icon" title="ورود">👤</a>
   </div>
 </header>
 
+
 <main>
-  <h1>به کیکینو خوش آمدید 🎂</h1>
-  <p>سفارش آنلاین کیک با طراحی اختصاصی و ارسال به محل</p>
-  <button class="btn btn-primary btn-small" onclick="location.href='products.html'">شروع سفارش</button>
+  <section class="hero">
+    <h1>سفارش آنلاین کیک، بدون دردسر</h1>
+    <p class="lead">مدل کیک را انتخاب کنید، وزن و طعم را تعیین کنید، متن روی کیک را بنویسید و آدرس را وارد کنید. باقی کار با ما.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="products.html">شروع سفارش</a>
+      <a class="btn btn-outline" href="admin-login.html">ورود مدیر</a>
+    </div>
+  </section>
+
+  <section class="highlights" aria-label="ویژگی‌ها">
+    <div class="highlight-card">
+      <h3>شخصی‌سازی کامل</h3>
+      <p>وزن، طعم، متن روی کیک و بازه تحویل.</p>
+    </div>
+    <div class="highlight-card">
+      <h3>پیگیری در پنل مدیریت</h3>
+      <p>وضعیت سفارش‌ها را از «در انتظار» تا «تحویل» مدیریت کنید.</p>
+    </div>
+    <div class="highlight-card">
+      <h3>تحویل درب منزل</h3>
+      <p>ارسال در بازه‌های زمانی انتخابی داخل شهر.</p>
+    </div>
+  </section>
 </main>
 
-<footer class="main-footer">
 
+<footer class="main-footer">
   <div class="footer-section">
     <h3>کیکینو</h3>
-    <p>سفارش آنلاین کیک‌های دست‌ساز و مناسبتی</p>
+    <p>سفارش آنلاین کیک‌های دست‌ساز و مناسبتی با امکان شخصی‌سازی و ارسال.</p>
   </div>
 
   <div class="footer-section">
     <h4>لینک‌های مفید</h4>
     <ul>
       <li><a href="products.html">سفارش کیک</a></li>
-      <li><a href="#">قوانین</a></li>
-      <li><a href="#">سوالات متداول</a></li>
+      <li><a href="delivery-info.html">راهنمای ارسال</a></li>
+      <li><a href="admin-login.html">پنل مدیریت</a></li>
       <li><a href="contact.html">تماس با ما</a></li>
     </ul>
   </div>
 
   <div class="footer-section">
     <h4>ارتباط با ما</h4>
-    <p>📍 اصفهان ...</p>
-    <p>📞 0912...</p>
+    <p>📍 اصفهان</p>
+    <p>📞 0912-000-0000</p>
     <p>📸 Instagram: @Cakino</p>
   </div>
-
 </footer>
 
 <div class="copyright">
   © 2025 کیکینو — تمامی حقوق محفوظ است
 </div>
 
+<script src="js/data.js"></script><script src="js/store.js"></script>
 </body>
 </html>
