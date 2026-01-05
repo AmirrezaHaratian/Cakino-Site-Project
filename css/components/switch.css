@@ -1,0 +1,40 @@
+
+.md-switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+}
+.md-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.md-switch .track {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 12px;
+  transition: background-color 0.2s;
+}
+.md-switch .thumb {
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+.md-switch input:checked + .track {
+  background-color: #6200ee;
+}
+.md-switch input:checked + .track + .thumb {
+  transform: translateX(18px);
+}
+.md-switch input:disabled + .track {
+  background-color: #eee;
+  cursor: not-allowed;
+}
