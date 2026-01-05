@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
   
-</head>
+  <link rel="stylesheet" href="css/material.css">
+  </head>
 <body>
 
 <header class="main-header">
@@ -27,8 +28,8 @@
   </nav>
 
   <div class="header-actions">
-    <a href="cart.html" class="icon" title="سبد خرید">🛒</a>
-    <a href="login.html" class="icon" title="ورود">👤</a>
+    <a href="cart.html" class="icon-btn" title="سبد خرید">🛒</a>
+    <a href="login.html" class="icon-btn" title="ورود">👤</a>
   </div>
 </header>
 
@@ -44,24 +45,68 @@
     </div>
 
     <form id="customizeForm" class="form card">
-      <label for="weightKg">وزن کیک</label>
-      <select id="weightKg" name="weightKg" required>
-        <option value="1">1 کیلو</option>
-        <option value="2">2 کیلو</option>
-        <option value="3">3 کیلو</option>
-        <option value="4">4 کیلو</option>
-      </select>
+      <div class="md-field">
+        <select id="weightKg" name="weightKg" required>
+          <option value="1">1 کیلو</option>
+          <option value="2">2 کیلو</option>
+          <option value="3">3 کیلو</option>
+          <option value="4">4 کیلو</option>
+        </select>
+        <label for="weightKg">وزن کیک</label>
+      </div>
 
-      <label for="flavor">طعم</label>
-      <select id="flavor" name="flavor" required>
-        <option value="شکلاتی">شکلاتی</option>
-        <option value="وانیلی">وانیلی</option>
-        <option value="گردویی">گردویی</option>
-        <option value="توت‌فرنگی">توت‌فرنگی</option>
-      </select>
+      <div class="md-field">
+        <select id="flavor" name="flavor" required>
+          <option value="شکلاتی">شکلاتی</option>
+          <option value="وانیلی">وانیلی</option>
+          <option value="گردویی">گردویی</option>
+          <option value="توت‌فرنگی">توت‌فرنگی</option>
+        </select>
+        <label for="flavor">طعم</label>
+      </div>
 
-      <label for="message">متن روی کیک (اختیاری)</label>
-      <input id="message" name="message" type="text" placeholder="مثلاً: تولدت مبارک">
+      <div class="md-field">
+        <input id="message" name="message" type="text" placeholder=" " >
+        <label for="message">متن روی کیک (اختیاری)</label>
+        <div class="md-helper">مثلاً: تولدت مبارک</div>
+      </div>
+
+      <div class="md-choice" aria-label="افزودنی‌ها">
+        <label class="md-checkbox">
+          <input type="checkbox" id="addonCandles" name="addons" value="candles">
+          <span class="md-control" aria-hidden="true"></span>
+          <span class="md-label">شمع</span>
+        </label>
+        <label class="md-checkbox">
+          <input type="checkbox" id="addonCard" name="addons" value="card">
+          <span class="md-control" aria-hidden="true"></span>
+          <span class="md-label">کارت تبریک</span>
+        </label>
+        <label class="md-checkbox">
+          <input type="checkbox" id="addonTopper" name="addons" value="topper" disabled>
+          <span class="md-control" aria-hidden="true"></span>
+          <span class="md-label">تاپر آماده (به‌زودی)</span>
+        </label>
+      </div>
+
+      <div class="md-choice" aria-label="نوع روکش">
+        <span style="display:block;margin:.2rem 0 .35rem;color:var(--muted-text);font-size:.95rem;">نوع روکش</span>
+        <label class="md-radio">
+          <input type="radio" name="icing" value="خامه" checked>
+          <span class="md-control" aria-hidden="true"></span>
+          <span class="md-label">خامه</span>
+        </label>
+        <label class="md-radio">
+          <input type="radio" name="icing" value="فوندانت">
+          <span class="md-control" aria-hidden="true"></span>
+          <span class="md-label">فوندانت</span>
+        </label>
+        <label class="md-radio">
+          <input type="radio" name="icing" value="گاناتش" disabled>
+          <span class="md-control" aria-hidden="true"></span>
+          <span class="md-label">گاناتش (غیرفعال)</span>
+        </label>
+      </div>
 
       <div class="actions-row">
         <a class="btn btn-outline" href="products.html">بازگشت</a>
@@ -101,5 +146,15 @@
 </div>
 
 <script src="js/data.js"></script><script src="js/store.js"></script><script src="js/shop.js"></script>
+
+  <!-- FAB: Go to top -->
+  <button id="goTopFab" class="fab" type="button" aria-label="بازگشت به بالا" title="بازگشت به بالا">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 5l7 7-1.41 1.41L13 8.83V20h-2V8.83L6.41 13.41 5 12l7-7z"></path>
+    </svg>
+  </button>
+  <script src="js/ui.js"></script>
+
+
 </body>
 </html>

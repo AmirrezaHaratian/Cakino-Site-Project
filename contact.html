@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
   
-</head>
+  <link rel="stylesheet" href="css/material.css">
+  </head>
 <body>
 
 <header class="main-header">
@@ -27,8 +28,8 @@
   </nav>
 
   <div class="header-actions">
-    <a href="cart.html" class="icon" title="سبد خرید">🛒</a>
-    <a href="login.html" class="icon" title="ورود">👤</a>
+    <a href="cart.html" class="icon-btn" title="سبد خرید">🛒</a>
+    <a href="login.html" class="icon-btn" title="ورود">👤</a>
   </div>
 </header>
 
@@ -38,14 +39,34 @@
   <p class="lead">پیشنهاد، انتقاد یا سفارش سازمانی دارید؟ پیام بدهید.</p>
 
   <form class="form card" onsubmit="event.preventDefault(); alert('پیام شما ثبت شد (دمو).');">
-    <label>نام و نام‌خانوادگی</label>
-    <input type="text" required>
+    <div class="md-field">
+      <input id="cName" type="text" placeholder=" " required>
+      <label for="cName">نام و نام‌خانوادگی</label>
+    </div>
 
-    <label>شماره تماس</label>
-    <input type="tel" required>
+    <div class="md-field">
+      <input id="cPhone" type="tel" placeholder=" " required>
+      <label for="cPhone">شماره تماس</label>
+    </div>
 
-    <label>پیام شما</label>
-    <textarea rows="5" required></textarea>
+    <div class="md-field">
+      <textarea id="cMsg" rows="5" placeholder=" " required></textarea>
+      <label for="cMsg">پیام شما</label>
+      <div class="md-helper">در صورت نیاز، تیم پشتیبانی با شما تماس می‌گیرد.</div>
+    </div>
+
+    <div class="md-choice" aria-label="گزینه‌های تماس">
+      <label class="md-checkbox">
+        <input type="checkbox" id="callMe" name="callMe">
+        <span class="md-control" aria-hidden="true"></span>
+        <span class="md-label">ترجیحاً تماس تلفنی</span>
+      </label>
+      <label class="md-checkbox">
+        <input type="checkbox" id="emailCopy" disabled>
+        <span class="md-control" aria-hidden="true"></span>
+        <span class="md-label">ارسال کپی به ایمیل (به‌زودی)</span>
+      </label>
+    </div>
 
     <button class="btn btn-primary" type="submit">ارسال پیام</button>
   </form>
@@ -81,5 +102,15 @@
 </div>
 
 <script src="js/data.js"></script><script src="js/store.js"></script>
+
+  <!-- FAB: Go to top -->
+  <button id="goTopFab" class="fab" type="button" aria-label="بازگشت به بالا" title="بازگشت به بالا">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 5l7 7-1.41 1.41L13 8.83V20h-2V8.83L6.41 13.41 5 12l7-7z"></path>
+    </svg>
+  </button>
+  <script src="js/ui.js"></script>
+
+
 </body>
 </html>

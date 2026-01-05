@@ -45,7 +45,10 @@ main{
 }
 
 .header-actions{display:flex; gap:.5rem}
-.icon{
+
+/* Icon button (icon-only) */
+.icon,
+.icon-btn{
   width:40px;
   height:40px;
   display:inline-flex;
@@ -54,8 +57,68 @@ main{
   border:1px solid var(--border);
   border-radius:999px;
   background:#fff;
+  cursor:pointer;
+  user-select:none;
+  transition:transform .05s ease, box-shadow .2s ease, background .2s ease;
 }
-.icon:hover{background:var(--muted)}
+.icon:hover,
+.icon-btn:hover{background:var(--muted)}
+
+.icon:focus-visible,
+.icon-btn:focus-visible{
+  outline:3px solid rgba(216,27,96,.25);
+  outline-offset:2px;
+}
+
+.icon:active,
+.icon-btn:active{transform:translateY(1px)}
+
+.icon-btn-sm{width:36px; height:36px; font-size:1rem}
+.icon-btn--danger{border-color:rgba(211,47,47,.35); color:var(--danger)}
+.icon-btn--primary{border-color:var(--primary); color:var(--primary); background:#fff}
+
+.icon svg,
+.icon-btn svg{width:20px; height:20px; fill:currentColor}
+
+.icon[aria-disabled="true"],
+.icon-btn[aria-disabled="true"]{
+  opacity:.55;
+  pointer-events:none;
+}
+
+/* Floating Action Button (FAB) - Go to top */
+.fab{
+  position:fixed;
+  inset-inline-end:22px;
+  inset-block-end:22px;
+  width:56px;
+  height:56px;
+  border-radius:999px;
+  border:1px solid var(--primary);
+  background:var(--primary);
+  color:var(--primary-contrast);
+  box-shadow:0 14px 34px rgba(0,0,0,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transform:translateY(12px);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease, transform .2s ease, box-shadow .2s ease;
+  z-index:50;
+}
+.fab:hover{box-shadow:0 18px 44px rgba(0,0,0,.22)}
+.fab:active{transform:translateY(2px)}
+.fab:focus-visible{outline:3px solid rgba(216,27,96,.25); outline-offset:4px}
+
+.fab.is-visible{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+.fab svg{width:22px; height:22px; fill:currentColor}
 
 .hero{
   padding:1.5rem;

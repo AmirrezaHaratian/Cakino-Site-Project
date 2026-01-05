@@ -1,0 +1,145 @@
+/* Material-like form controls (RTL-safe) */
+:root{
+  --md-primary: var(--primary);
+  --md-on-primary: #fff;
+  --md-surface: var(--surface);
+  --md-outline: var(--border);
+  --md-outline-strong: rgba(0,0,0,.42);
+  --md-focus: rgba(0,0,0,.12);
+}
+
+/* ---------- Text field (Outlined, floating label) ---------- */
+.md-field{position:relative; display:block; margin:.85rem 0;}
+.md-field input,
+.md-field textarea,
+.md-field select{
+  width:100%;
+  font:inherit;
+  color:var(--text);
+  background:var(--surface);
+  border:1px solid var(--md-outline);
+  border-radius:14px;
+  padding:1.1rem .95rem .95rem;
+  outline:none;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.md-field textarea{min-height:120px; resize:vertical;}
+.md-field select{padding-top:1.25rem;}
+
+.md-field label{
+  position:absolute;
+  inset-inline-start:.85rem;
+  top:.95rem;
+  color:var(--muted-text);
+  pointer-events:none;
+  background:transparent;
+  padding:0 .35rem;
+  transform-origin: top right;
+  transition: transform .15s ease, top .15s ease, color .15s ease, background .15s ease;
+}
+
+/* Float label when focused or has content */
+.md-field input:focus + label,
+.md-field input:not(:placeholder-shown) + label,
+.md-field textarea:focus + label,
+.md-field textarea:not(:placeholder-shown) + label,
+.md-field select:focus + label,
+.md-field select:not([value=""]) + label,
+.md-field select.md-has-value + label{
+  top:-.55rem;
+  background:var(--surface);
+  transform: scale(.9);
+  color: var(--md-primary);
+}
+
+.md-field input:hover,
+.md-field textarea:hover,
+.md-field select:hover{border-color: rgba(0,0,0,.35);} 
+
+.md-field input:focus,
+.md-field textarea:focus,
+.md-field select:focus{
+  border-color: var(--md-primary);
+  box-shadow: 0 0 0 4px rgba(109, 40, 217, .12);
+}
+
+.md-field input:disabled,
+.md-field textarea:disabled,
+.md-field select:disabled{
+  background: rgba(0,0,0,.03);
+  color: rgba(0,0,0,.5);
+  cursor:not-allowed;
+}
+.md-field input:disabled + label,
+.md-field textarea:disabled + label,
+.md-field select:disabled + label{color: rgba(0,0,0,.45);} 
+
+.md-helper{margin:.25rem .2rem 0; color:var(--muted-text); font-size:.88rem;}
+
+/* ---------- Checkbox / Radio (Material-like) ---------- */
+.md-choice{display:flex; flex-wrap:wrap; gap:.75rem 1.25rem; margin:.5rem 0 1rem;}
+
+.md-checkbox,
+.md-radio{display:inline-flex; align-items:center; gap:.55rem; cursor:pointer; user-select:none;}
+
+.md-checkbox input,
+.md-radio input{position:absolute; opacity:0; width:1px; height:1px;}
+
+.md-checkbox .md-control,
+.md-radio .md-control{
+  width:20px; height:20px;
+  border:2px solid rgba(0,0,0,.45);
+  display:inline-grid; place-items:center;
+  transition: border-color .15s ease, background .15s ease, box-shadow .15s ease, transform .05s ease;
+  background:var(--surface);
+}
+.md-checkbox .md-control{border-radius:6px;}
+.md-radio .md-control{border-radius:999px;}
+
+/* hover */
+.md-checkbox:hover .md-control,
+.md-radio:hover .md-control{border-color: rgba(0,0,0,.65); box-shadow: 0 0 0 6px rgba(0,0,0,.06);} 
+
+/* focus */
+.md-checkbox input:focus-visible + .md-control,
+.md-radio input:focus-visible + .md-control{box-shadow: 0 0 0 6px rgba(109, 40, 217, .16);} 
+
+/* pressed */
+.md-checkbox:active .md-control,
+.md-radio:active .md-control{transform: scale(.96); box-shadow: 0 0 0 8px rgba(109, 40, 217, .12);} 
+
+/* checked */
+.md-checkbox input:checked + .md-control{
+  background: var(--md-primary);
+  border-color: var(--md-primary);
+}
+.md-checkbox input:checked + .md-control::after{
+  content:"";
+  width:10px; height:6px;
+  border:2px solid var(--md-on-primary);
+  border-top:none; border-right:none;
+  transform: rotate(-45deg);
+  margin-top:-1px;
+}
+
+.md-radio input:checked + .md-control{border-color: var(--md-primary);} 
+.md-radio input:checked + .md-control::after{
+  content:"";
+  width:10px; height:10px;
+  background: var(--md-primary);
+  border-radius:999px;
+}
+
+/* disabled */
+.md-checkbox input:disabled + .md-control,
+.md-radio input:disabled + .md-control{border-color: rgba(0,0,0,.22); background: rgba(0,0,0,.03); box-shadow:none;}
+.md-checkbox input:disabled:checked + .md-control{background: rgba(0,0,0,.22); border-color: rgba(0,0,0,.22);} 
+.md-radio input:disabled:checked + .md-control::after{background: rgba(0,0,0,.22);} 
+.md-checkbox input:disabled ~ .md-label,
+.md-radio input:disabled ~ .md-label{color: rgba(0,0,0,.45);}
+.md-checkbox input:disabled,
+.md-radio input:disabled{cursor:not-allowed;}
+.md-checkbox:has(input:disabled),
+.md-radio:has(input:disabled){cursor:not-allowed;}
+
+.md-label{line-height:1.2;}

@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/material.css">
   <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
@@ -27,8 +28,8 @@
   </nav>
 
   <div class="header-actions">
-    <a href="cart.html" class="icon" title="سبد خرید">🛒</a>
-    <a href="login.html" class="icon" title="ورود">👤</a>
+    <a href="cart.html" class="icon-btn" title="سبد خرید">🛒</a>
+    <a href="login.html" class="icon-btn" title="ورود">👤</a>
   </div>
 </header>
 
@@ -64,20 +65,34 @@
   <form id="productForm" class="inline-form card">
     <h2 id="formMode" style="margin:.2rem 0 0.8rem">افزودن محصول</h2>
 
-    <label>شناسه (id)</label>
-    <input name="pid" placeholder="مثلاً: pistachio" required>
+    <div class="md-field">
+      <input id="pid" name="pid" placeholder=" " required>
+      <label for="pid">شناسه (id)</label>
+      <div class="md-helper">مثلاً: pistachio</div>
+    </div>
 
-    <label>نام محصول</label>
-    <input name="pname" placeholder="مثلاً: کیک پسته‌ای" required>
+    <div class="md-field">
+      <input id="pname" name="pname" placeholder=" " required>
+      <label for="pname">نام محصول</label>
+      <div class="md-helper">مثلاً: کیک پسته‌ای</div>
+    </div>
 
-    <label>قیمت هر کیلو (تومان)</label>
-    <input name="pprice" type="number" placeholder="مثلاً: 650000" required>
+    <div class="md-field">
+      <input id="pprice" name="pprice" type="number" placeholder=" " required>
+      <label for="pprice">قیمت هر کیلو (تومان)</label>
+      <div class="md-helper">مثلاً: 650000</div>
+    </div>
 
-    <label>دسته‌بندی</label>
-    <input name="pcat" placeholder="مثلاً: خاص">
+    <div class="md-field">
+      <input id="pcat" name="pcat" placeholder=" ">
+      <label for="pcat">دسته‌بندی</label>
+    </div>
 
-    <label>آدرس تصویر (اختیاری)</label>
-    <input name="pimg" placeholder="assests/images/...">
+    <div class="md-field">
+      <input id="pimg" name="pimg" placeholder=" ">
+      <label for="pimg">آدرس تصویر (اختیاری)</label>
+      <div class="md-helper">نمونه: assests/images/... </div>
+    </div>
 
     <div class="actions-row">
       <button class="btn btn-primary" type="submit">ذخیره</button>
@@ -135,5 +150,15 @@
 </div>
 
 <script src="js/data.js"></script><script src="js/store.js"></script><script src="js/admin.js"></script>
+
+  <!-- FAB: Go to top -->
+  <button id="goTopFab" class="fab" type="button" aria-label="بازگشت به بالا" title="بازگشت به بالا">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 5l7 7-1.41 1.41L13 8.83V20h-2V8.83L6.41 13.41 5 12l7-7z"></path>
+    </svg>
+  </button>
+  <script src="js/ui.js"></script>
+
+
 </body>
 </html>

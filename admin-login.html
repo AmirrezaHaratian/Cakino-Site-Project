@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/material.css">
   <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
@@ -22,18 +23,22 @@
     </ul>
   </nav>
   <div class="header-actions">
-    <a href="index.html" class="icon" title="بازگشت">↩</a>
+    <a href="index.html" class="icon-btn" title="بازگشت">↩</a>
   </div>
 </header>
 
 <main>
   <h1>ورود مدیر</h1>
   <form id="adminLoginForm" class="form card">
-    <label>نام کاربری</label>
-    <input name="username" type="text" placeholder="admin" required>
+    <div class="md-field">
+      <input id="aUser" name="username" type="text" placeholder=" " required value="admin">
+      <label for="aUser">نام کاربری</label>
+    </div>
 
-    <label>رمز عبور</label>
-    <input name="password" type="password" placeholder="1234" required>
+    <div class="md-field">
+      <input id="aPass" name="password" type="password" placeholder=" " required value="1234">
+      <label for="aPass">رمز عبور</label>
+    </div>
 
     <button class="btn btn-primary" type="submit">ورود</button>
 
@@ -64,5 +69,15 @@
 <script src="js/data.js"></script>
 <script src="js/store.js"></script>
 <script src="js/admin.js"></script>
+
+  <!-- FAB: Go to top -->
+  <button id="goTopFab" class="fab" type="button" aria-label="بازگشت به بالا" title="بازگشت به بالا">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 5l7 7-1.41 1.41L13 8.83V20h-2V8.83L6.41 13.41 5 12l7-7z"></path>
+    </svg>
+  </button>
+  <script src="js/ui.js"></script>
+
+
 </body>
 </html>

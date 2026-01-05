@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/material.css">
   <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
@@ -27,8 +28,8 @@
   </nav>
 
   <div class="header-actions">
-    <a href="cart.html" class="icon" title="سبد خرید">🛒</a>
-    <a href="login.html" class="icon" title="ورود">👤</a>
+    <a href="cart.html" class="icon-btn" title="سبد خرید">🛒</a>
+    <a href="login.html" class="icon-btn" title="ورود">👤</a>
   </div>
 </header>
 
@@ -61,14 +62,47 @@
 </div>
 
 <form class="inline-form card" onsubmit="event.preventDefault(); alert('تنظیمات ذخیره شد (دمو).');">
-  <label>نام فروشگاه</label>
-  <input value="کیکینو">
+  <div class="md-field">
+    <input id="sName" value="کیکینو" placeholder=" ">
+    <label for="sName">نام فروشگاه</label>
+  </div>
 
-  <label>شماره تماس</label>
-  <input value="0912-000-0000">
+  <div class="md-field">
+    <input id="sPhone" value="0912-000-0000" placeholder=" ">
+    <label for="sPhone">شماره تماس</label>
+  </div>
 
-  <label>هزینه ارسال (تومان)</label>
-  <input type="number" value="45000">
+  <div class="md-field">
+    <input id="sShip" type="number" value="45000" placeholder=" ">
+    <label for="sShip">هزینه ارسال (تومان)</label>
+  </div>
+
+  <div class="md-choice" aria-label="تنظیمات عمومی">
+    <label class="md-checkbox">
+      <input type="checkbox" id="smsOn" checked>
+      <span class="md-control" aria-hidden="true"></span>
+      <span class="md-label">ارسال اعلان پیامکی به مدیر</span>
+    </label>
+    <label class="md-checkbox">
+      <input type="checkbox" id="inventoryOn" disabled>
+      <span class="md-control" aria-hidden="true"></span>
+      <span class="md-label">مدیریت موجودی (به‌زودی)</span>
+    </label>
+  </div>
+
+  <div class="md-choice" aria-label="واحد نمایش قیمت">
+    <span style="display:block;margin:.2rem 0 .35rem;color:var(--muted-text);font-size:.95rem;">واحد نمایش قیمت</span>
+    <label class="md-radio">
+      <input type="radio" name="priceUnit" value="toman" checked>
+      <span class="md-control" aria-hidden="true"></span>
+      <span class="md-label">تومان</span>
+    </label>
+    <label class="md-radio">
+      <input type="radio" name="priceUnit" value="rial">
+      <span class="md-control" aria-hidden="true"></span>
+      <span class="md-label">ریال</span>
+    </label>
+  </div>
 
   <button class="btn btn-primary" type="submit">ذخیره</button>
 </form>
@@ -106,5 +140,15 @@
 </div>
 
 <script src="js/data.js"></script><script src="js/store.js"></script><script src="js/admin.js"></script>
+
+  <!-- FAB: Go to top -->
+  <button id="goTopFab" class="fab" type="button" aria-label="بازگشت به بالا" title="بازگشت به بالا">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 5l7 7-1.41 1.41L13 8.83V20h-2V8.83L6.41 13.41 5 12l7-7z"></path>
+    </svg>
+  </button>
+  <script src="js/ui.js"></script>
+
+
 </body>
 </html>

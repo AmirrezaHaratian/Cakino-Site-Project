@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
   
-</head>
+  <link rel="stylesheet" href="css/material.css">
+  </head>
 <body>
 
 <header class="main-header">
@@ -27,8 +28,8 @@
   </nav>
 
   <div class="header-actions">
-    <a href="cart.html" class="icon" title="سبد خرید">🛒</a>
-    <a href="login.html" class="icon" title="ورود">👤</a>
+    <a href="cart.html" class="icon-btn" title="سبد خرید">🛒</a>
+    <a href="login.html" class="icon-btn" title="ورود">👤</a>
   </div>
 </header>
 
@@ -38,8 +39,10 @@
   <p class="lead">کدی که دریافت کردید را وارد کنید.</p>
 
   <form class="form card" onsubmit="event.preventDefault(); location.href='reset.html';">
-    <label>کد</label>
-    <input type="text" required>
+    <div class="md-field">
+      <input id="otpCode" type="text" placeholder=" " required>
+      <label for="otpCode">کد</label>
+    </div>
     <button class="btn btn-primary" type="submit">تأیید</button>
     <p style="margin:.2rem 0 0"><small>دمو: 12345</small></p>
   </form>
@@ -75,5 +78,15 @@
 </div>
 
 <script src="js/data.js"></script><script src="js/store.js"></script>
+
+  <!-- FAB: Go to top -->
+  <button id="goTopFab" class="fab" type="button" aria-label="بازگشت به بالا" title="بازگشت به بالا">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 5l7 7-1.41 1.41L13 8.83V20h-2V8.83L6.41 13.41 5 12l7-7z"></path>
+    </svg>
+  </button>
+  <script src="js/ui.js"></script>
+
+
 </body>
 </html>

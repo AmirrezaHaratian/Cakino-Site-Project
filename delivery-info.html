@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/typography.css">
   
-</head>
+  <link rel="stylesheet" href="css/material.css">
+  </head>
 <body>
 
 <header class="main-header">
@@ -27,8 +28,8 @@
   </nav>
 
   <div class="header-actions">
-    <a href="cart.html" class="icon" title="سبد خرید">🛒</a>
-    <a href="login.html" class="icon" title="ورود">👤</a>
+    <a href="cart.html" class="icon-btn" title="سبد خرید">🛒</a>
+    <a href="login.html" class="icon-btn" title="ورود">👤</a>
   </div>
 </header>
 
@@ -37,24 +38,67 @@
   <h1>مشخصات ارسال</h1>
 
   <form id="deliveryForm" class="form card">
-    <label for="fullname">نام گیرنده</label>
-    <input id="fullname" name="fullname" type="text" required>
+    <div class="md-field">
+      <input id="fullname" name="fullname" type="text" placeholder=" " required>
+      <label for="fullname">نام گیرنده</label>
+    </div>
 
-    <label for="phone">شماره تماس</label>
-    <input id="phone" name="phone" type="tel" placeholder="09xxxxxxxxx" required>
+    <div class="md-field">
+      <input id="phone" name="phone" type="tel" placeholder=" " required>
+      <label for="phone">شماره تماس</label>
+      <div class="md-helper">نمونه: 09xxxxxxxxx</div>
+    </div>
 
-    <label for="address">آدرس تحویل</label>
-    <textarea id="address" name="address" rows="4" required></textarea>
+    <div class="md-field">
+      <textarea id="address" name="address" rows="4" placeholder=" " required></textarea>
+      <label for="address">آدرس تحویل</label>
+    </div>
 
-    <label for="date">تاریخ تحویل</label>
-    <input id="date" name="date" type="date">
+    <div class="md-field">
+      <input id="date" name="date" type="date" placeholder=" ">
+      <label for="date">تاریخ تحویل</label>
+    </div>
 
-    <label for="time">بازه زمانی تحویل</label>
-    <select id="time" name="time">
-      <option value="9 تا 12">9 تا 12</option>
-      <option value="12 تا 15" selected>12 تا 15</option>
-      <option value="18 تا 21">18 تا 21</option>
-    </select>
+    <div class="md-field">
+      <select id="time" name="time">
+        <option value="9 تا 12">9 تا 12</option>
+        <option value="12 تا 15" selected>12 تا 15</option>
+        <option value="18 تا 21">18 تا 21</option>
+      </select>
+      <label for="time">بازه زمانی تحویل</label>
+    </div>
+
+    <div class="md-choice" aria-label="روش پرداخت">
+      <span style="display:block;margin:.2rem 0 .35rem;color:var(--muted-text);font-size:.95rem;">روش پرداخت</span>
+      <label class="md-radio">
+        <input type="radio" name="payMethod" value="آنلاین" checked>
+        <span class="md-control" aria-hidden="true"></span>
+        <span class="md-label">پرداخت آنلاین</span>
+      </label>
+      <label class="md-radio">
+        <input type="radio" name="payMethod" value="کارت به کارت">
+        <span class="md-control" aria-hidden="true"></span>
+        <span class="md-label">کارت‌به‌کارت</span>
+      </label>
+      <label class="md-radio">
+        <input type="radio" name="payMethod" value="پرداخت در محل" disabled>
+        <span class="md-control" aria-hidden="true"></span>
+        <span class="md-label">پرداخت در محل (غیرفعال)</span>
+      </label>
+    </div>
+
+    <div class="md-choice" aria-label="گزینه‌های ارسال">
+      <label class="md-checkbox">
+        <input type="checkbox" id="noContact" name="noContact">
+        <span class="md-control" aria-hidden="true"></span>
+        <span class="md-label">تحویل بدون تماس</span>
+      </label>
+      <label class="md-checkbox">
+        <input type="checkbox" id="giftWrap" name="giftWrap" disabled>
+        <span class="md-control" aria-hidden="true"></span>
+        <span class="md-label">بسته‌بندی هدیه (به‌زودی)</span>
+      </label>
+    </div>
 
     <div class="actions-row">
       <a class="btn btn-outline" href="customize.html">بازگشت</a>
@@ -93,5 +137,15 @@
 </div>
 
 <script src="js/data.js"></script><script src="js/store.js"></script><script src="js/shop.js"></script>
+
+  <!-- FAB: Go to top -->
+  <button id="goTopFab" class="fab" type="button" aria-label="بازگشت به بالا" title="بازگشت به بالا">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 5l7 7-1.41 1.41L13 8.83V20h-2V8.83L6.41 13.41 5 12l7-7z"></path>
+    </svg>
+  </button>
+  <script src="js/ui.js"></script>
+
+
 </body>
 </html>

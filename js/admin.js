@@ -140,8 +140,16 @@
         <td>${CAKINO.money(p.pricePerKg)}</td>
         <td>${p.category || "—"}</td>
         <td class="admin-actions">
-          <button class="btn btn-small btn-outline" data-edit="${p.id}">ویرایش</button>
-          <button class="btn btn-small" data-del="${p.id}" style="border-color:rgba(211,47,47,.35); color:var(--danger)">حذف</button>
+          <button class="icon-btn icon-btn-sm icon-btn--primary" type="button" data-edit="${p.id}" aria-label="ویرایش محصول" title="ویرایش">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm2.92 2.83H5v-.92l9.06-9.06.92.92L5.92 20.08zM20.71 7.04a1.003 1.003 0 000-1.42L18.37 3.29a1.003 1.003 0 00-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.83z"></path>
+            </svg>
+          </button>
+          <button class="icon-btn icon-btn-sm icon-btn--danger" type="button" data-del="${p.id}" aria-label="حذف محصول" title="حذف">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6 7h12v2H6V7zm2 3h8l-1 10H9L8 10zm3-6h2l1 1h5v2H5V5h5l1-1z"></path>
+            </svg>
+          </button>
         </td>
       </tr>
     `).join("") || `<tr><td colspan="5">محصولی وجود ندارد.</td></tr>`;
